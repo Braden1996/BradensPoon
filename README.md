@@ -11,14 +11,15 @@ brew cask install hammerspoon
 ```sh
 brew install lua
 ```
-3. Install Lua dependencies locally via [Luarocks](https://luarocks.org/):
+3. Clone this repository:
 ```sh
-luarocks install --tree lua_modules penlight
-```
-4. Clone this repository:
-```sh
-cd ~/Development/Rice/
+cd ~/Development/Rice
 git clone https://github.com/Braden1996/BradensPoon.git
+```
+4. Install Lua dependencies locally via [Luarocks](https://luarocks.org/):
+```sh
+cd BradensPoon
+luarocks install --tree lua_modules penlight
 ```
 5. Run `Hammerspoon.app` and follow the prompts to enable _Accessibility_ access for the app.
 6. Click on the Hammerspoon menu bar icon 🔨 and choose `Open Config` from the menu.
@@ -27,3 +28,4 @@ git clone https://github.com/Braden1996/BradensPoon.git
 package.path = '/Users/braden/Development/Rice/BradensPoon/?.lua' .. package.path;
 require('init')
 ```
+8. Reload your Hammerspoon config.
