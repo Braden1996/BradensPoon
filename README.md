@@ -23,9 +23,12 @@ luarocks install --tree lua_modules penlight
 ```
 5. Run `Hammerspoon.app` and follow the prompts to enable _Accessibility_ access for the app.
 6. Click on the Hammerspoon menu bar icon 🔨 and choose `Open Config` from the menu.
-7. Paste the following (into `~/.hammerspoon/init.lua`):
+7. Get the directory path of where you installed BradensPoon, e.g. run `pwd` after step 4.
+8. Paste the following (into `~/.hammerspoon/init.lua`):
 ```lua
-package.path = '/Users/braden/Development/Rice/BradensPoon/?.lua;' .. package.path;
+local yourPath = '/Users/braden/Development/Rice/BradensPoon/'
+package.path = yourPath .. '?.lua;' .. package.path;
 require('init')
 ```
-8. Reload your Hammerspoon config.
+8. Replace the value of yourPath (e.g. `/Users/braden/Development/Rice/BradensPoon/`) with your directory path, as obtained in step 7.
+9. Reload your Hammerspoon config.
