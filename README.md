@@ -25,7 +25,7 @@ luarocks install --tree lua_modules penlight
 6. Click on the Hammerspoon menu bar icon 🔨 and choose `Open Config` from the menu.
 7. Paste the following (into `~/.hammerspoon/init.lua`):
 ```lua
-package.path = '/Users/braden/Development/Rice/BradensPoon/?.lua' .. package.path;
+package.path = '/Users/braden/Development/Rice/BradensPoon/?.lua;' .. package.path;
 require('init')
 ```
 8. Reload your Hammerspoon config.
