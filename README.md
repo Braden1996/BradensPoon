@@ -31,7 +31,14 @@ package.path = yourPath .. '?.lua;' .. package.path;
 require('init')
 ```
 8. Replace the value of yourPath (e.g. `/Users/braden/Development/Rice/BradensPoon/`) with your directory path, as obtained in step 7.
-9. Reload your Hammerspoon config.
+9. Install undocumented Hammerspoon module for spaces:
+```sh
+cd ~/.hammerspoon
+curl -s https://api.github.com/repos/asmagill/hs._asm.undocumented.spaces/releases/latest | grep browser_download_url | cut -d '"' -f 4 | xargs curl -L -o spaces.tar.gz
+tar -xzf spaces.tar.gz
+rm spaces.tar.gz
+```
+10. Reload your Hammerspoon config.
 
 ## 👨🏼‍💻 Development
 Interested in fixing up some bugs, or developing awesome new features? Here are a few notes to help get you started:
