@@ -17,7 +17,7 @@ local function openIterm()
   local frame = rectanglePreview:frame()
   local createItermWithBounds = string.format([[
     if application "iTerm" is not running then
-      activate application "iTerm"
+      launch application "iTerm"
     end if
     tell application "iTerm"
       set newWindow to (create window with default profile)
