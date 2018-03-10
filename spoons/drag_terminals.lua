@@ -29,33 +29,40 @@ end
 
 local fromPoint = nil
 
-local drag_event = hs.eventtap.new({ hs.eventtap.event.types.mouseMoved }, function(e)
-  local toPoint = hs.mouse.getAbsolutePosition()
-  local newFrame = hs.geometry.new({
-    ["x1"] = fromPoint.x,
-    ["y1"] = fromPoint.y,
-    ["x2"] = toPoint.x,
-    ["y2"] = toPoint.y,
-  })
-  rectanglePreview:setFrame(newFrame)
+local drag_event = hs.eventtap.new(
+  { hs.eventtap.event.types.mouseMoved },
+  function(e)
+    local toPoint = hs.mouse.getAbsolutePosition()
+    local newFrame = hs.geometry.new({
+      x1 = fromPoint.x,
+      y1 = fromPoint.y,
+      x2 = toPoint.x,
+      y2 = toPoint.y,
+    })
+    rectanglePreview:setFrame(newFrame)
 
-  return nil
-end)
-
-local flags_event = hs.eventtap.new({ hs.eventtap.event.types.flagsChanged }, function(e)
-  local flags = e:getFlags()
-  if flags.ctrl and flags.shift then
-    fromPoint = hs.mouse.getAbsolutePosition()
-    rectanglePreview:setFrame(hs.geometry.rect(fromPoint.x, fromPoint.y, 0, 0))
-    drag_event:start()
-    rectanglePreview:show()
-  elseif fromPoint ~= nil then
-    fromPoint = nil
-    drag_event:stop()
-    rectanglePreview:hide()
-    openIterm()
+    return nil
   end
-  return nil
-end)
+)
+
+local flags_event = hs.eventtap.new(
+  { hs.eventtap.event.types.flagsChanged },
+  function(e)
+    local flags = e:getFlags()
+    if flags.ctrl and flags.shift then
+      fromPoint = hs.mouse.getAbsolutePosition()
+      local startFrame = hs.geometry.rect(fromPoint.x, fromPoint.y, 0, 0)
+      rectanglePreview:setFrame(startFrame)
+      drag_event:start()
+      rectanglePreview:show()
+    elseif fromPoint ~= nil then
+      fromPoint = nil
+      drag_event:stop()
+      rectanglePreview:hide()
+      openIterm()
+    end
+    return nil
+  end
+)
 flags_event:start()
 
