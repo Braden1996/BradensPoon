@@ -1,10 +1,8 @@
 local modulePath = (...):match("(.-)[^%.]+$")
 require(modulePath .. 'dependencies')
 
-return function()
-  local utils = {}
+local utils = {}
 
-  pl.tablex.update(utils, require(modulePath .. 'factories.init')(), true)
+utils.colors = require(modulePath .. 'colors')
 
-  return utils
-end
+return utils

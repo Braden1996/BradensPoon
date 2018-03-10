@@ -1,4 +1,4 @@
 poon = {}
 
-poon.utils = require('utils.init')()
+poon.utils = require('utils.init')
 require('spoons.init');
