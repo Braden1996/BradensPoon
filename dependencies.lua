@@ -1,6 +1,6 @@
 local function set_local_module_paths()
   local sourcePath = debug.getinfo(1, 'S').source:match("@(.*)$")
-    :gsub('/utils/dependencies.lua$', '')
+    :gsub('/dependencies.lua$', '')
   local modulesPath = sourcePath .. '/lua_modules'
 
   local version = _VERSION:match("%d+%.%d+")

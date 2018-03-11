@@ -1,5 +1,4 @@
 local modulePath = (...):match("(.-)[^%.]+$")
-require(modulePath .. 'dependencies')
 
 local utils = {}
 
