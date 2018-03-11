@@ -1,6 +1,6 @@
 # 🧙‍ BradensPoon - Hammerspoon Configuration
 
-## 👨🏼‍💻 Installation
+## ☄️ Installation
 Getting up and running takes less than a minute!
 
 1. Install [Hammerspoon](http://www.hammerspoon.org/):
@@ -32,3 +32,22 @@ require('init')
 ```
 8. Replace the value of yourPath (e.g. `/Users/braden/Development/Rice/BradensPoon/`) with your directory path, as obtained in step 7.
 9. Reload your Hammerspoon config.
+
+## 👨🏼‍💻 Development
+Interested in fixing up some bugs, or developing awesome new features? Here are a few notes to help get you started:
+
+<details>
+  <summary>Testing</summary>
+  <p>
+As a standard, we try to maintain a strong coverage of tests for all code which isn't strickly coupled with Hammerspoon. To get up and running with tests, follow the steps below:
+
+1. Install [Busted](https://github.com/bluebird75/luaunit), the unit-testing framework of choice, globally via [Luarocks](https://luarocks.org/):
+```sh
+luarocks install -busted
+```
+2. Execute all our tests:
+```sh
+busted -v
+```
+  </p>
+</details>

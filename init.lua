@@ -1,6 +1,5 @@
-require('dependencies')
+require('init_helper')
 
-poon = {}
-
-poon.utils = require('utils.init')
-require('spoons.init');
+if poon.config.init_spoons then
+  require('spoons.init');
+end
