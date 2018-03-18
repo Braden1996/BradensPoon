@@ -1,5 +1,4 @@
-local class = pl.class
-local List = pl.List
+local class, List = pl.class, pl.List
 
 local TreeNode = class()
 
@@ -33,7 +32,7 @@ end
 
 function TreeNode:insertChild(index, childNode)
   if childNode.parent ~= nil then
-    childNode.parent:removeChild(child);
+    childNode.parent:removeChild(childNode);
   end
 
   childNode.parent = self;
@@ -43,11 +42,11 @@ end
 function TreeNode:adoptChildrenFrom(node)
   local adoptChildrenIndex = self.children:index(node)
 
-  for adoptChild in node.children:reverse():iter() do
+  for adoptChild in node.children:clone():reverse():iter() do
     if adoptChildrenIndex == nil then
-      self.addChild(adoptChild)
+      self:addChild(adoptChild)
     else
-      self.insertChild(adoptChild, adoptChildrenIndex)
+      self:insertChild(adoptChildrenIndex + 1, adoptChild)
     end
   end
 end
