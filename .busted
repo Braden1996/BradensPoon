@@ -1,9 +1,0 @@
-return {
-  _all = {
-    helper = 'init_helper'
-  },
-  default = {
-    ROOT = {"tests/"},
-    verbose = true
-  },
-}
