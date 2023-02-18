@@ -1,5 +1,7 @@
 # 🧙‍ BradensPoon - Hammerspoon Configuration
 
+![hammerspoon-drag-windows-resized-optimised](https://user-images.githubusercontent.com/5165963/219899047-77a9c49c-796b-44df-bc45-7f8bd8b7bb87.gif)
+
 ## ☄️ Installation
 Getting up and running takes less than a minute!
 
